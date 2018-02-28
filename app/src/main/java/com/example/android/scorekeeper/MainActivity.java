@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.android.courtcounter.R;
+import com.example.android.scorekeeper.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,29 +28,53 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Increase the score for Team A by 1 point.
+     * Increase the score for Team A by 6 point when a team has scored
+     * a touchdown.
      */
-    public void addOneForTeamA(View v) {
+    public void addTouchDownForTeamA(View v) {
+        scoreTeamA += 6;
+        displayForTeamA(scoreTeamA);
+    }
+
+    /**
+     * Increase the score for Team A by 1 point
+     * after a touchdown has been made.
+     */
+    public void addExtraPointAttemptforTeamA(View v) {
         scoreTeamA += 1;
         displayForTeamA(scoreTeamA);
     }
 
     /**
      * Increase the score for Team A by 2 points.
+     * After a touchdown has been made
      */
-    public void addTwoForTeamA(View v) {
+    public void addTwoPointConversionForTeamA(View v) {
         scoreTeamA += 2;
         displayForTeamA(scoreTeamA);
     }
 
     /**
-     * Increase the score for Team A by 3 points.
+     * Increase the score for Team A by 3 points when a field goal is kicked
+     * without having made a touchdown
      */
-    public void addThreeForTeamA(View v) {
+    public void addFieldGoalForTeamA(View v) {
 
         scoreTeamA += 3;
         displayForTeamA(scoreTeamA);
     }
+
+    /**
+     * Increase the score for Team A by 2 points when a safety is scored against Team B
+     * without having made a touchdown
+     */
+    public void addSafetyForTeamA(View v) {
+
+        scoreTeamA += 2;
+        displayForTeamA(scoreTeamA);
+    }
+
+
 
     /**
      * Displays the given score for Team B.
@@ -61,29 +85,58 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Increase the score for Team B by 1 point.
+     * Increase the score for Team B by 6 point.
      */
-    public void addOneForTeamB(View v) {
+    public void addTouchDownForTeamB(View v) {
+        scoreTeamB += 6;
+        displayForTeamB(scoreTeamB);
+    }
+
+    /**
+     * Increase the score for Team B by 1 points when a field goal
+     * is scored after a touchdown is made.
+     */
+    public void addExtraPointAttemptforTeamB(View v) {
         scoreTeamB += 1;
         displayForTeamB(scoreTeamB);
     }
 
     /**
-     * Increase the score for Team A by 2 points.
+     * Increase the score for Team B by 2 points when a two point conversion
+     * is scored after a touchdown is made.
      */
-    public void addTwoForTeamB(View v) {
+    public void addTwoPointConversionForTeamB(View v) {
+
         scoreTeamB += 2;
         displayForTeamB(scoreTeamB);
+
     }
 
     /**
-     * Increase the score for Team A by 3 points.
+     * Add field goal attempt without scoring
+     * a touchdown first (3 points) to Team B
+     *
      */
-    public void addThreeForTeamB(View v) {
+
+    public void addFieldGoalForTeamB(View v) {
 
         scoreTeamB += 3;
         displayForTeamB(scoreTeamB);
     }
+
+
+    /**
+     * Increase the score for Team B by 2 points when a safety is scored against Team A
+     * without having made a touchdown
+     */
+    public void addSafetyForTeamB(View v) {
+
+        scoreTeamB += 2;
+        displayForTeamB(scoreTeamB);
+    }
+
+
+
 
     /**
      * Reset team scores
